@@ -32,7 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(childhood));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +44,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "材料計算";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.Location = new System.Drawing.Point(325, 29);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(70, 70);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "刪除材料";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Tan;
+            this.textBox4.Location = new System.Drawing.Point(527, 52);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(182, 27);
+            this.textBox4.TabIndex = 10;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Khaki;
@@ -94,6 +116,16 @@
             this.button4.Text = "銷貨計算";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::childhood_cake.Properties.Resources.dog;
+            this.pictureBox1.Location = new System.Drawing.Point(924, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -180,41 +212,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "材料總花費";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::childhood_cake.Properties.Resources.dog;
-            this.pictureBox1.Location = new System.Drawing.Point(924, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // Timer1
             // 
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // textBox4
+            // panel1
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Tan;
-            this.textBox4.Location = new System.Drawing.Point(527, 52);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(182, 27);
-            this.textBox4.TabIndex = 10;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.Location = new System.Drawing.Point(325, 29);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 70);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "刪除材料";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.panel1.Location = new System.Drawing.Point(12, 128);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(539, 432);
+            this.panel1.TabIndex = 2;
             // 
             // childhood
             // 
@@ -224,6 +231,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1054, 630);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "childhood";
             this.Text = "Childhood Cake. Cost calculation program.";
@@ -251,6 +259,7 @@
         private System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

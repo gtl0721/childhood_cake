@@ -15,7 +15,8 @@ namespace childhood_cake
     public partial class childhood : Form
     {
         public int GBoxN = 0;
-        public List<string> material_list = new List<string>();
+        public List<string> Material_list = new List<string>();
+        public List<GroupBox> GroupBox_list = new List<GroupBox>();
         public string BasicPath = System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
         public childhood()
@@ -40,6 +41,9 @@ namespace childhood_cake
         {
             this.Width = 840;
             this.Height = 570;
+            panel1.Width = 840;
+            panel1.Height = 770;
+            panel1.Location = new Point(0, 0);
             groupBox1.Width = 800;
             groupBox1.Height = 100;
             Timer1.Start();
@@ -92,9 +96,9 @@ namespace childhood_cake
                 return;
             }
 
-            Controls.Add(Gbox);
+            panel1.Controls.Add(Gbox);
             CreateControls(Gbox);
-
+            GroupBox_list.Add(Gbox);
             GBoxN++;
         }
         private void CreateControls(GroupBox gBox)
@@ -192,7 +196,7 @@ namespace childhood_cake
                         B[4] = "說明 = " + TxtB4.Text;
                         for (int j = 0; j < 5; j++) 
                         {
-                            material_list.Add(B[j]);
+                            Material_list.Add(B[j]);
                         }
                     }
                     else { MessageBox.Show("老闆，第" + (i + 1) + "筆材料有內容為0喔!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); check_flg = false; }
@@ -222,9 +226,9 @@ namespace childhood_cake
                 DirectoryInfo new_file = Directory.CreateDirectory(datapath);
                 using (StreamWriter sw = new StreamWriter(datapath + "\\" + "成本紀錄.txt", false, Encoding.Unicode))
                 {
-                    for (int i = 0; i < material_list.Count; i++)
+                    for (int i = 0; i < Material_list.Count; i++)
                     {
-                        string count = material_list[i];
+                        string count = Material_list[i];
                         sw.WriteLine(count);
                         if ((i + 1) % 5 == 0 && i != 0) { sw.WriteLine(""); }
                     }
@@ -240,8 +244,17 @@ namespace childhood_cake
         private void button5_Click(object sender, EventArgs e)
         {
             GroupBox Gbox = new GroupBox();
-            Gbox.Controls.Remove(Gbox);
-            Gbox.Dispose();
+            if ((GBoxN - 1) >= 0) 
+            {
+                Gbox = GroupBox_list[GBoxN - 1];
+                if (panel1.Controls.Contains(Gbox))
+                {
+                    panel1.Controls.Remove(Gbox);
+                    Gbox.Dispose();
+                }
+                GroupBox_list.Remove(GroupBox_list[GBoxN - 1]);
+                GBoxN--;
+            }
         }
     }
 }

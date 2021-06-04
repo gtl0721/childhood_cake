@@ -13,3 +13,6 @@ The calculate window screenshots.
 -Easy to record the cost and also can generate the txt file in desktop.
 
 -East to calculate the daly turnover and also can generate the txt file in desktop.
+
+# Screenshot
+![image](mainwindow1.PNG)

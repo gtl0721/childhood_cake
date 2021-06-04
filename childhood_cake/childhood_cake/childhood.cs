@@ -61,6 +61,7 @@ namespace childhood_cake
         }
         private void CreateGBox(string text)//Create GroupBox
         {
+            #region GroupBox
             GroupBox Gbox = new GroupBox();
             Gbox.Name = "GBox" + GBoxN;
             Gbox.Text = text + "-" + (GBoxN + 1);
@@ -100,6 +101,7 @@ namespace childhood_cake
             CreateControls(Gbox);
             GroupBox_list.Add(Gbox);
             GBoxN++;
+            #endregion
         }
         private void CreateControls(GroupBox gBox)
         {
@@ -176,12 +178,14 @@ namespace childhood_cake
             {
                 for (int i = 0; i < GBoxN; i++) 
                 {
-                    GroupBox GB = (GroupBox)Controls["GBox" + i];
-                    TextBox TxtB0 = (TextBox)GB.Controls["T" + i + "0"]; //名稱
-                    TextBox TxtB1 = (TextBox)GB.Controls["T" + i + "1"]; //單價
-                    TextBox TxtB2 = (TextBox)GB.Controls["T" + i + "2"]; //數量
-                    TextBox TxtB3 = (TextBox)GB.Controls["T" + i + "3"]; //總價
-                    TextBox TxtB4 = (TextBox)GB.Controls["T" + i + "4"]; //說明
+                    GroupBox Gbox = new GroupBox();
+                    Gbox = GroupBox_list[i];
+                    TextBox TxtB0 = (TextBox)Gbox.Controls["T" + i + "0"]; //名稱
+                    TextBox TxtB1 = (TextBox)Gbox.Controls["T" + i + "1"]; //單價
+                    TextBox TxtB2 = (TextBox)Gbox.Controls["T" + i + "2"]; //數量
+                    TextBox TxtB3 = (TextBox)Gbox.Controls["T" + i + "3"]; //總價
+                    TextBox TxtB4 = (TextBox)Gbox.Controls["T" + i + "4"]; //說明
+
                     TxtB1_int = Convert.ToInt32(TxtB1.Text);                  
                     TxtB2_int = Convert.ToInt32(TxtB2.Text);
                     
@@ -207,7 +211,6 @@ namespace childhood_cake
                     textBox3.Text = Convert.ToString(sum + Convert.ToInt16(textBox2.Text));
                     button3.Enabled = true;
                 }
-                else { return; }
             }
         }
 

@@ -1,4 +1,4 @@
-# childhood_cake
+# ![Alt text](executablefile.PNG) Childhood_cake
 Cost calculation program for SHINYU.
 
 The main window screenshots.
@@ -8,7 +8,8 @@ The calculate window screenshots.
 -------------
 ![image](calculatewindow.PNG)
 
-# summary
+# Summary
 
 -Easy to record the cost and also can generate the txt file in desktop.
+
 -East to calculate the daly turnover and also can generate the txt file in desktop.
